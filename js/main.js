@@ -15,23 +15,28 @@ function guerrier(name, attack, defense, health) {
     this.defense = defense;
     this.health = health;
     this.combat = function(attaquer) {
-      this.health=attaquer-this.attack;
+      this.health -=attaquer.attack
+console.log("Il reste à" + " " + this.name + " " + this.health + " points de santé");
     };
 
 }
-var firstWarrior = new person("Xena", 7, 8, 10);
-var secondWarrior = new person("Alti", 6, 7, 10);
-console.log("Vie Xena" + ":" + secondWarrior.combat);
-console.log("Vie Alti" + ":" + firstWarrior.attaquer);
+var firstWarrior = new guerrier("Xena", 7, 8, 100);
+var secondWarrior = new guerrier("Alti", 6, 7, 100);
+
+firstWarrior.combat(secondWarrior);
+secondWarrior.combat(firstWarrior);
+
+// for (let i=0; i <  ; i++) {
+// } CREER LOOP POUR GUERRIERS SATTAQUENT CHACUN LEUR TOUR  
 
 function personnage(name, attack, defense, health, mana) {
     this.name = name;
     this.attack = attack;
     this.defense = defense;
     this.health = health;
-    this.mana = 30;
+    this.mana = mana;
     this.soin = function(soigner) {
-      
+
     };
   }
-  var magicien = new personnage("Xena", 7, 8, 10);
+  var magicien = new personnage("Him", 5, 6, 10, 30);
